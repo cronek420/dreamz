@@ -1,0 +1,8 @@
+{
+  "name": "DreamWeaver",
+  "description": "An AI-powered dream journal to capture, analyze, and visualize your dreams. Understand your subconscious patterns and explore what your dreams say about you.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DreamWeaver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes move-twinkle-back {
+        from { background-position: 0 0; }
+        to { background-position: -10000px 5000px; }
+      }
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAHdElNRQfhBA8MOB581J5AAAAAdklEQVQ4y2NgGAWjYBSMglEwCkbB8YAng/E7E0sYhmA4n8HAwMDwPyMDw76CgYFBp4iBgaF7RkH5D0h/g9I/gJqB4f8jC4N9ZQMMv0GbfwY23wDGLyD6B6z+AasfsDyY/g+WH2D+A5B/gPQPkP4ADgAANb44yzk70c4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDQtMTVUMTI6MTI6MzArMDI6MDDE23o3AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTA0LTE1VDEyOjEyOjMwKzAyOjAwk2Z4aAAAAABJRU5ErkJggg==) repeat top center;
+        z-index: 0;
+      }
+      .twinkling {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAHdElNRQfhBA8MODw3Zjg/AAAAa0lEQVQ4y2NgGAWjYBSMglEwCkbB8YAng/F/EMAwA8O/g4GB4T8DAwPD/4eBgaH/Q0H5D0h/g9I/gJqB4f+jC4N9ZQMMv0GbfwY23wDGLyD6B6z+AasfsDyY/g+WH2D+A5B/gPQPkP4ADgAA4z061EDNfQEAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDQtMTVUMTI6MTI6NTYrMDI6MDCNbknIAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTA0LTE1VDEyOjEyOjU2KzAyOjAwEH6iKgAAAABJRU5ErkJggg==) repeat top center;
+        z-index: 1;
+        animation: move-twinkle-back 200s linear infinite;
+      }
+      body {
+        position: relative;
+        background-color: #0B0C10;
+        color: #e5e7eb; /* Changed from #C7D0D8 to Tailwind gray-200 for better contrast */
+      }
+      .glowing-border {
+        position: relative;
+        background: #1a1c2e;
+        border-radius: 0.75rem; /* 12px */
+      }
+      .glowing-border::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        z-index: -1;
+        background: linear-gradient(120deg, #6C63FF, #00FFF7, #FF00A0, #6C63FF);
+        background-size: 400%;
+        border-radius: 0.8rem;
+        animation: glow 8s linear infinite;
+      }
+      @keyframes glow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0B0C10; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #6C63FF;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8c84ff;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div class="relative z-10">
+      <div id="root"></div>
+    </div>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
