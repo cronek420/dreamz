@@ -18,11 +18,13 @@ const JournalView: React.FC<JournalViewProps> = ({ dreams, onAddChatMessage }) =
   }
 
   return (
-    <div className="space-y-6">
-       <h3 className="text-xl font-semibold text-gray-100 text-center">Recent Dreams</h3>
-      {dreams.map((dream) => (
-        <DreamCard key={dream.id} dream={dream} onAddChatMessage={onAddChatMessage} />
-      ))}
+    <div>
+      <h3 className="text-xl font-semibold text-gray-100 text-center mb-6">Recent Dreams</h3>
+      <div className="space-y-6">
+        {dreams.map((dream) => (
+          <DreamCard key={dream.id} dream={dream} onAddChatMessage={onAddChatMessage} />
+        ))}
+      </div>
     </div>
   );
 };

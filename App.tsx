@@ -171,10 +171,10 @@ export default function App() {
   // Render the main app if a user is logged in
   return (
     <div className="min-h-screen font-sans antialiased relative">
-      <div className="container mx-auto px-4 pb-24 max-w-2xl">
-        <Header user={currentUser} onLogout={handleLogout} onUpgradeClick={() => setIsUpgradeModalOpen(true)} />
-        <main>{renderActiveView()}</main>
-      </div>
+      <Header user={currentUser} onLogout={handleLogout} onUpgradeClick={() => setIsUpgradeModalOpen(true)} />
+      <main className="container mx-auto px-4 pb-24 max-w-2xl">
+        {renderActiveView()}
+      </main>
       
       <BottomNav activeTab={activeTab} setActiveTab={setActiveTab} />
       {activeTab !== ActiveTab.Scribe && <FloatingActionButton onClick={() => setIsModalOpen(true)} />}

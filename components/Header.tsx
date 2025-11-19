@@ -46,8 +46,9 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout, onUpgradeClick }) => {
   };
   
   return (
-    <header className="py-6 text-center relative">
-       <div className="absolute top-4 right-0 text-right text-xs">
+    <header className="container mx-auto px-4 max-w-2xl py-6 flex items-center justify-between">
+       <h2 className="text-3xl font-bold text-white">Dream Journal</h2>
+       <div className="text-right text-xs">
           <div className="flex items-center justify-end gap-2">
             <p className="text-gray-400">{user.email}</p>
             {renderPlanStatus()}
@@ -59,7 +60,6 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout, onUpgradeClick }) => {
             Log Out
           </button>
         </div>
-      <h2 className="text-3xl font-bold text-white">Dream Journal</h2>
     </header>
   );
 };

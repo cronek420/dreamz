@@ -3,8 +3,7 @@ import { User } from '../types';
 
 // The Stripe publishable key is now sourced from environment variables.
 // This is a secure practice for deployment.
-const STRIPE_PUBLISHABLE_KEY = process.env.pk\_live\_51RCVaCP36JQgLLd8SCHHtPzuSO2s6IuDXxxKLuJj9tpUQQLTiJfrtYosu9ih5M6KOI1D6VJ32Jw5p6G82bx00O2i00PI19OGmD
-|| '';
+const STRIPE_PUBLISHABLE_KEY = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || '';
 
 if (!STRIPE_PUBLISHABLE_KEY) {
     console.warn('Stripe is not configured. Please add your Stripe publishable key to the `STRIPE_PUBLISHABLE_KEY` environment variable.');
