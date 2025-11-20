@@ -75,7 +75,7 @@ export default function App() {
 
     setIsLoading(true);
     try {
-      const analysisOptions = options || { narrative: false, archetypes: false, symbols: false };
+      const analysisOptions = isPro ? options || { narrative: true, archetypes: true, symbols: true } : { narrative: true, archetypes: false, symbols: false };
       const analysis = await analyzeDream(dreamText, dreams, analysisOptions);
       const newDream: Dream = {
         id: new Date().toISOString(),
